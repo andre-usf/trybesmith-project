@@ -7,9 +7,7 @@ const getAllProducts = async (): Promise<IProduct[] | RowDataPacket[]> => {
   return products;
 };
 
-const createProduct = async (product: IProduct): Promise<number | ResultSetHeader> => {
-  const { name, amount } = product;
-  
+const createProduct = async ({ name, amount }: IProduct): Promise<number | ResultSetHeader> => {
   const [{ insertId }] = await connection.execute<ResultSetHeader>(
     'INSERT INTO Trybesmith.products (name, amount) VALUE (?, ?)', 
     [name, amount],
