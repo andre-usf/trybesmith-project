@@ -1,5 +1,6 @@
 import { IProduct } from '../interfaces';
 import productsModel from '../models/productsModel';
+import validateProductFields from './validations/validateProducts';
 
 const getAllProducts = async () => {
   const products = await productsModel.getAllProducts();
@@ -7,6 +8,9 @@ const getAllProducts = async () => {
 };
 
 const createProduct = async (product: IProduct) => {
+  const error = validateProductFields(product);
+  if (error.type) return error;
+  
   const insertId = await productsModel.createProduct(product);
   return { type: 201, result: { id: insertId, name: product.name, amount: product.amount } };
 };
