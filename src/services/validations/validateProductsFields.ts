@@ -1,6 +1,6 @@
 import { IProduct } from '../../interfaces';
 import schemas from './schemas';
-import typeByErrorMessage from './validateErrorMessage';
+import typeByErrorMessage from './handleTypeByErrorMessage';
 
 const validateProductFields = (product: IProduct) => {
   const { error } = schemas.productsSchema.validate(product);

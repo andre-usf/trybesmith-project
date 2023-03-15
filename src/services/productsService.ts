@@ -1,6 +1,6 @@
 import { IProduct } from '../interfaces';
 import productsModel from '../models/productsModel';
-import validateProductFields from './validations/validateProducts';
+import validateProductFields from './validations/validateProductsFields';
 
 const getAllProducts = async () => {
   const products = await productsModel.getAllProducts();
