@@ -12,9 +12,17 @@ const userSchema: ObjectSchema = Joi.object({
   password: Joi.string().min(8).required(),
 });
 
+const productsIdsSchema: ObjectSchema = Joi.object({
+  productsIds: Joi.array().min(1).items(Joi.number()).messages(
+    { 'array.min': '"productsIds" must include only numbers' },
+  )
+    .required(),
+});
+
 const schemas = {
   productsSchema,
   userSchema,
+  productsIdsSchema,
 };
 
 export default schemas;

@@ -1,6 +1,6 @@
-import jwt, { SignOptions } from 'jsonwebtoken';
+import jwt, { JwtPayload, SignOptions } from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { ILogin, IUser } from '../interfaces';
+import { IUser } from '../interfaces';
 
 dotenv.config();
 
@@ -11,7 +11,10 @@ const JWT_CONFIG: SignOptions = {
   algorithm: 'HS256',
 };
 
-export const createToken = (data: IUser | ILogin) => jwt
+export const createToken = (data: IUser) => jwt
   .sign({ payload: data }, secret, JWT_CONFIG);
 
-export const verifyToken = (token: string) => jwt.verify(token, secret);
+export const verifyToken = (token: string): JwtPayload => {
+  const payload = jwt.verify(token, secret);
+  return payload as JwtPayload;
+};

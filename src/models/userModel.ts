@@ -1,9 +1,9 @@
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { ILogin, IUser } from '../interfaces';
+import { IUser } from '../interfaces';
 import connection from './connection';
 
-const getUserByUsername = async (username: string): Promise<ILogin> => {
-  const [[user]] = await connection.execute<ILogin[] & RowDataPacket[]>(
+const getUserByUsername = async (username: string): Promise<IUser> => {
+  const [[user]] = await connection.execute<IUser[] & RowDataPacket[]>(
     'SELECT * FROM Trybesmith.users WHERE username = ?',
     [username],
   );

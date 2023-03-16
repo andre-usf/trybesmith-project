@@ -1,8 +1,7 @@
 import { createToken } from '../auth/auth';
-import { ILogin } from '../interfaces';
 import userModel from '../models/userModel';
 
-const login = async (body: ILogin) => {
+const login = async (body: { username: string, password: string }) => {
   const { username, password } = body;
   
   if (!username) {
@@ -19,7 +18,7 @@ const login = async (body: ILogin) => {
     return { type: 401, result: { message: 'Username or password invalid' } };
   }
 
-  const token = createToken(body);
+  const token = createToken(result);
 
   return { type: 200, result: { token } };
 };
