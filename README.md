@@ -14,10 +14,11 @@ O projeto foi desenvolvido durante o módulo de back-end na [Trybe](https://www.
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-<!-- 
 
 ## Implementações
 
+- Desenvolvido com TypeScript;
+- Commits seguindo a prática de [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/);
 - Utilização do Docker para criar o ambiente de desenvolvimento;
 - Criação de endpoints utilizando o framework Express.JS e a aplicação do padrão REST;
 - Aplicação da arquitetura em camadas MSC (model, service e controller);
@@ -26,31 +27,30 @@ O projeto foi desenvolvido durante o módulo de back-end na [Trybe](https://www.
 - Middleware para a autenticação do token do usuário para permitir acesso às rotas;
 - Conexão e gerenciamento do banco de dados com MySQL.
 
-
 ## Instalação com Docker:
 
 1. Clone o repositório:
 
 ```
-git clone git@github.com:andre-usf/blogs-api-project.git
+git clone git@github.com:andre-usf/trybesmith-project.git
 ```
 
 2. Entre no diretório criado:
 
 ```
-cd blogs-api-project
+cd trybesmith-project
 ```
 
 3. Inicie o docker compose:
 
 ```
-docker-compose up -d --build
+docker-compose up -d
 ```
 
 4. Acesse o terminal dentro do container:
 
 ```
-docker exec -it blogs_api bash
+docker exec -it trybesmith bash
 ```
 
 5. Instale as dependências:
@@ -62,7 +62,7 @@ npm install
 6. Inicie a aplicação:
 
 ```
-npm run prestart && npm run seed && npm run debug
+npm run restore && npm run dev
 ```
 
 ## Instalação local (sem Docker):
@@ -79,9 +79,8 @@ npm install
 3. Inicie a aplicação:
 
 ```
-npm run prestart && npm run seed && npm run debug
+npm run restore && npm run dev
 ```
--->
 
 ## Sobre mim
 
