@@ -21,7 +21,7 @@ O projeto foi desenvolvido durante o módulo de back-end na [Trybe](https://www.
 - Commits seguindo a prática de [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/);
 - Utilização do Docker para criar o ambiente de desenvolvimento;
 - Criação de endpoints utilizando o framework Express.JS e a aplicação do padrão REST;
-- Aplicação da arquitetura em camadas MSC (model, service e controller);
+- Aplicação da arquitetura em camadas - model, service e controller;
 - Validações de campos de usuários, produtos e pedidos utilizando a biblioteca Joi;
 - Utilização do JSON Web Token para geração de token ao efetuar login e criar usuário;
 - Middleware para a autenticação do token do usuário para permitir acesso às rotas;
